@@ -649,7 +649,7 @@ Don't miss this golden opportunity! Buy more than 2 sets and get an additional 1
             "price": "{{discountPrice}}",
             "itemCondition": "https://schema.org/NewCondition",
             "availability": "https://schema.org/InStock",
-            "url": "/p/product.html?productId={{id}}"
+            "url": "/product.html?productId={{id}}"
         }
     }
     </script>
@@ -724,12 +724,12 @@ Don't miss this golden opportunity! Buy more than 2 sets and get an additional 1
             const relatedProductsHtml = relatedProducts.slice(displayedProductsCount, displayedProductsCount + productsToShow)
                 .map(product => `
                     <div class="product-item">
-                        <a href="/p/product.html?productId=${product[0]}">
+                        <a href="/product.html?productId=${product[0]}">
                             <img src="${product[1]}" alt="${product[2]}">
                         </a>
                         <div class="price">USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
                         <div class="discount">${product[5]} off</div>
-                        <p> <a href="/p/product.html?productId=${product[0]}">${product[2]}</a></p>
+                        <p> <a href="/product.html?productId=${product[0]}">${product[2]}</a></p>
                     </div>
                 `).join('');
 
