@@ -87,7 +87,7 @@ input, select, textarea {
 	}
 
 	body {
-    max-width: 900px; /* Mengatur lebar maksimum body */
+    max-width: 1200px; /* Mengatur lebar maksimum body */
     margin: 0 auto;   /* Memusatkan body */
     padding: 20px;    /* Menambahkan padding (opsional) */
     
@@ -119,7 +119,7 @@ a:hover {
 	}
 
 		body.is-preload, body.is-preload * {
-    max-width: 900px; /* Mengatur lebar maksimum */
+    max-width: 1200px; /* Mengatur lebar maksimum */
     margin: 0 auto;   /* Memusatkan konten */
 }
 
@@ -218,19 +218,19 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 	.container {
     margin: 0 auto;
-    max-width: 900px; /* Mengatur lebar maksimum menjadi 900px */
+    max-width: 1200px; /* Mengatur lebar maksimum menjadi 1200px */
     width: 100%; /* Mengatur lebar default ke 100% */
 }
 
 @media screen and (max-width: 1680px) {
     .container {
-        width: 900px; /* Ubah lebar untuk layar di bawah 1680px */
+        width: 1200px; /* Ubah lebar untuk layar di bawah 1680px */
     }
 }
 
 @media screen and (max-width: 1280px) {
     .container {
-        width: 900px; /* Ubah lebar untuk layar di bawah 1280px */
+        width: 1200px; /* Ubah lebar untuk layar di bawah 1280px */
     }
 }
 
