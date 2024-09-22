@@ -208,7 +208,7 @@ a:hover {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
-		width: 1400px;
+		width: 900px;
 	}
 
 		@media screen and (max-width: 1680px) {
