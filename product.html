@@ -614,7 +614,7 @@
         "price": "{{discountPrice}}",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
-        "url": "/p/product.html?productId={{id}}"
+        "url": "/product.html?productId={{id}}"
     }
 }
 </script>
@@ -658,22 +658,7 @@
                 <div class="discount">${product[5]} off</div>
                 <center><a href="${product[6]}" class="buy-now">See Detail</a></center>
             </div>
-	     <p>
-
-Get Your Dream  ${product[2]  Set at a Discounted Price!
-
-Complete your  ${product[2]  collection at an incredibly affordable price. Our  ${product[2] set, is now available at a special ${product[5]} discount!
-
-Crafted from high-quality  material, each product in this set is designed to. With its  ${product[2] design, the ${product[2] set is not only  but will also be the center of attention on any occasion.
-
-Why should you have this set?
-
-Premium Quality: Experience the luxury of soft and durable material.
-Elegant Design: Showcase your style with a design that is timeless and suitable for various occasions.
-Versatility: This  ${product[2] is highly versatile and can be used for  various uses.
-Affordable Price: Get all these benefits at an unbeatable price.
-Don't miss this golden opportunity! Buy more than 2 sets and get an additional 10% discount plus free shipping. Limited stock, grab your desired  ${product[2] set now before it's gone!
-																		    </p>
+	     														    </p>
         `;
         document.getElementById('product-detail').innerHTML = productDetailHtml;
 
@@ -698,12 +683,12 @@ Don't miss this golden opportunity! Buy more than 2 sets and get an additional 1
         const relatedProductsHtml = relatedProducts.slice(start, end)
             .map(product => `
                 <div class="product-item">
-                    <a href="/p/product.html?productId=${product[0]}">
+                    <a href="/product.html?productId=${product[0]}">
                         <img src="${product[1]}" alt="${product[2]}">
                     </a>
                     <div class="price">USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
                     <div class="discount">${product[5]} off</div>
-                    <p><a href="/p/product.html?productId=${product[0]}">${product[2]}</a></p>
+                    <p><a href="/product.html?productId=${product[0]}">${product[2]}</a></p>
                 </div>
             `).join('');
 
