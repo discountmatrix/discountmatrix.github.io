@@ -195,25 +195,27 @@
         }
       
     </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet" />
 <style>
     * {
         box-sizing: border-box; /* Memastikan padding dan margin dihitung dengan benar */
     }
 
     body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 0;
-            padding: 0;
-            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
-        }
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+    }
 
     .breadcrumb {
         margin-bottom: 20px;
@@ -355,48 +357,10 @@
         border-radius: 10px;
         cursor: pointer;
     }
-	.product-item {
-    flex: 1 1 calc(33.33% - 20px); /* Tiga kolom untuk layar besar */
-}
-
-@media (max-width: 768px) {
-    .product-item {
-        flex: 1 1 calc(50% - 20px); /* Dua kolom pada tablet */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-item {
-        flex: 1 1 100%; /* Satu kolom pada mobile */
-    }
-}
-
-    .product-item p {
-        font-size: 14px;
-        color: #333;
-    }
-
-    .pagination {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .pagination button {
-        background-color: #E91E63;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
 
     @media (max-width: 768px) {
         .product-item {
-            flex: 1 1 calc(45% - 20px); /* Dua kolom pada tablet */
-        }
-
-        .search-bar input[type="text"] {
-            flex: 1; /* Memungkinkan input untuk mengisi ruang */
+            flex: 1 1 calc(50% - 20px); /* Dua kolom pada tablet */
         }
     }
 
@@ -414,18 +378,31 @@
             width: 100%; /* Lebar penuh untuk input dan button */
         }
     }
+
+    .pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pagination button {
+        background-color: #E91E63;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 </style>
 
- <div class="container" id="content">
-        <div class="breadcrumb">
-            <a href="/">Home</a> &gt; <a href="/products">Products</a> &gt; <span id="breadcrumb-title">Product Title</span>
-        </div>
-   
+<div class="container" id="content">
+    <div class="breadcrumb">
+        <a href="/">Home</a> &gt; <a href="/products">Products</a> &gt; <span id="breadcrumb-title">Product Title</span>
+    </div>
 
-        <div class="product-section">
-            <div id="product-detail" class="product-detail">  </div></div>
-   
-   <!-- AddToAny BEGIN -->
+    <div class="product-section">
+        <div id="product-detail" class="product-detail"></div>
+    </div>
+<!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
 <a class="a2a_button_facebook"></a>
@@ -437,22 +414,7 @@
 </div>
 <script async="async" src="https://static.addtoany.com/menu/page.js" ></script>
 <!-- AddToAny END -->
-        <br/>     <br/>
-
-Get Your Dream <data:page.title/>  Set at a Discounted Price!
-
-Complete your <data:page.title/>  collection at an incredibly affordable price. Our <data:page.title/>  set, is now available at a special 55% discount!
-
-Crafted from high-quality  material, each product in this set is designed to. With its <data:page.title/>  design, the <data:page.title/>  set is not only  but will also be the center of attention on any occasion.
-
-Why should you have this set?
-
-Premium Quality: Experience the luxury of soft and durable material.
-Elegant Design: Showcase your style with a design that is timeless and suitable for various occasions.
-Versatility: This <data:page.title/>  is highly versatile and can be used for  various uses.
-Affordable Price: Get all these benefits at an unbeatable price.
-Don't miss this golden opportunity! Buy more than 2 sets and get an additional 10% discount plus free shipping. Limited stock, grab your desired <data:page.title/>  set now before it's gone!
-   
+        <br/>  
   
       
       <br/>     <br/>
@@ -619,148 +581,156 @@ Don't miss this golden opportunity! Buy more than 2 sets and get an additional 1
       
          <br/>     <br/> 
 
+	
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for related products..." autocomplete="off" />
+        <button id="search-button">Search</button>
+    </div>
 
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search for related products..." autocomplete="off" />
-            <button id="search-button">Search</button>
+    <div class="related-products-section">
+        <h2>Related Products</h2>
+        <div id="related-products-list" class="related-products"></div>
+        <div class="pagination">
+            <button id="load-more" style="display: none;">Load More</button>
         </div>
+    </div>
+</div>
 
-        <div class="related-products-section">
-            <h2>Related Products</h2>
-            <div id="related-products-list" class="related-products"></div>
-            <div class="pagination">
-                <button id="load-more">Load More</button>
-            </div>
-        </div>
-    </data:page.title></data:page.title></data:page.title></data:page.title></data:page.title></data:page.title></data:page.title></div>
-
-    <script type="application/ld+json" id="schema-markup">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": "{{title}}",
-        "image": "{{imageUrl}}",
-        "description": "Don't Miss Out: {{title}} is available with {{discount}}. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!",
-        "brand": {
-            "@type": "Brand",
-            "name": "Best Diskon"
-        },
-        "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "{{discountPrice}}",
-            "itemCondition": "https://schema.org/NewCondition",
-            "availability": "https://schema.org/InStock",
-            "url": "/p/product.html?productId={{id}}"
-        }
+<script type="application/ld+json" id="schema-markup">
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{title}}",
+    "image": "{{imageUrl}}",
+    "description": "Don't Miss Out: {{title}} is available with {{discount}}. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!",
+    "brand": {
+        "@type": "Brand",
+        "name": "Best Diskon"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "{{discountPrice}}",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "/p/product.html?productId={{id}}"
     }
-    </script>
+}
+</script>
 
-    <script>
-        const sheetId = '1dRJ72TYn9eBq-VK4sngnZqTCc-1eWNRBuhK6pMrSnt8';
-        const apiKey = 'AIzaSyCpmFiIHxwX6XhPbvZYTytfpiv_DcA1b2g';
-        const range = 'Sheet1';
+<script>
+    const sheetId = '1dRJ72TYn9eBq-VK4sngnZqTCc-1eWNRBuhK6pMrSnt8';
+    const apiKey = 'AIzaSyCpmFiIHxwX6XhPbvZYTytfpiv_DcA1b2g';
+    const range = 'Sheet1';
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('productId');
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('productId');
 
-        let relatedProducts = [];
-        let displayedProductsCount = 0;
-        const productsToShow = 6;
+    let relatedProducts = [];
+    let displayedProductsCount = 0;
+    const productsToShow = 6;
 
-        function fetchProductData() {
-            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-                .then(response => {
-                    if (!response.ok) {
-                        console.error('Network response was not ok', response.statusText);
-                        return;
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const rows = data.values;
-                    const productData = rows.find(row => row[0] === productId);
+    function fetchProductData() {
+        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const rows = data.values;
+                const productData = rows.find(row => row[0] === productId);
 
-                    if (productData) {
-                        displayProduct(productData);
-                        fetchRelatedProducts(productData[8]);
-                    } else {
-                        console.error('Product not found for ID:', productId);
-                    }
-                })
-                .catch(error => console.error('Error fetching product data:', error));
-        }
+                if (productData) {
+                    displayProduct(productData);
+                    fetchRelatedProducts(productData[8]);
+                } else {
+                    console.error('Product not found for ID:', productId);
+                }
+            })
+            .catch(error => console.error('Error fetching product data:', error));
+    }
 
-        function displayProduct(product) {
-            const productDetailHtml = `
-                <img src="${product[1]}" alt="${product[2]}" style="height: 300px;">
-                <div class="details">
-                    <h1>${product[2]}</h1>
-                    <p>Don't Miss Out: ${product[2]} is available with ${product[5]} off. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!</p>
-                    <div class="price">Price: USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
+    function displayProduct(product) {
+        const productDetailHtml = `
+            <img src="${product[1]}" alt="${product[2]}" style="height: 300px;">
+            <div class="details">
+                <h1>${product[2]}</h1>
+                <p>Don't Miss Out: ${product[2]} is available with ${product[5]} off. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!</p>
+                <div class="price">Price: USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
+                <div class="discount">${product[5]} off</div>
+                <center><a href="${product[6]}" class="buy-now">See Detail</a></center>
+            </div>
+	     <p>
+
+Get Your Dream  ${product[2]  Set at a Discounted Price!
+
+Complete your  ${product[2]  collection at an incredibly affordable price. Our  ${product[2] set, is now available at a special ${product[5]} discount!
+
+Crafted from high-quality  material, each product in this set is designed to. With its  ${product[2] design, the ${product[2] set is not only  but will also be the center of attention on any occasion.
+
+Why should you have this set?
+
+Premium Quality: Experience the luxury of soft and durable material.
+Elegant Design: Showcase your style with a design that is timeless and suitable for various occasions.
+Versatility: This  ${product[2] is highly versatile and can be used for  various uses.
+Affordable Price: Get all these benefits at an unbeatable price.
+Don't miss this golden opportunity! Buy more than 2 sets and get an additional 10% discount plus free shipping. Limited stock, grab your desired  ${product[2] set now before it's gone!
+																		    </p>
+        `;
+        document.getElementById('product-detail').innerHTML = productDetailHtml;
+
+        document.getElementById('breadcrumb-title').textContent = product[2];
+        document.querySelector('meta[name="description"]').setAttribute('content', `${product[2]} - Discover amazing discounts on this product. Shop now and save!`);
+        document.title = `${product[2]} - Best Diskon Product`;
+    }
+
+    function fetchRelatedProducts(category) {
+        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                relatedProducts = data.values.filter(row => row[8] === category && row[0] !== productId);
+                displayRelatedProducts();
+            })
+            .catch(error => console.error('Error fetching related products:', error));
+    }
+
+    function displayRelatedProducts() {
+        const start = displayedProductsCount;
+        const end = start + productsToShow;
+        const relatedProductsHtml = relatedProducts.slice(start, end)
+            .map(product => `
+                <div class="product-item">
+                    <a href="/p/product.html?productId=${product[0]}">
+                        <img src="${product[1]}" alt="${product[2]}">
+                    </a>
+                    <div class="price">USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
                     <div class="discount">${product[5]} off</div>
-                    <center><a href="${product[6]}" class="buy-now">See Detail</a></center>
+                    <p><a href="/p/product.html?productId=${product[0]}">${product[2]}</a></p>
                 </div>
-            `;
-            document.getElementById('product-detail').innerHTML = productDetailHtml;
+            `).join('');
 
-            // Update breadcrumb title
-            document.getElementById('breadcrumb-title').textContent = product[2];
+        document.getElementById('related-products-list').innerHTML += relatedProductsHtml;
+        displayedProductsCount += productsToShow;
 
-            // Update meta description and title
-            document.querySelector('meta[name="description"]').setAttribute('content', `${product[2]} - Discover amazing discounts on this product. Shop now and save!`);
-            document.title = `${product[2]} - Best Diskon Product`;
-        }
+        document.getElementById('load-more').style.display = displayedProductsCount >= relatedProducts.length ? 'none' : 'block';
+    }
 
-        function fetchRelatedProducts(category) {
-            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-                .then(response => response.json())
-                .then(data => {
-                    relatedProducts = data.values.filter(row => row[8] === category && row[0] !== productId);
-                    displayRelatedProducts();
-                })
-                .catch(error => console.error('Error fetching related products:', error));
-        }
+    document.getElementById('search-button').addEventListener('click', function() {
+        const searchTerm = document.getElementById('search-input').value.toLowerCase();
+        const filteredProducts = relatedProducts.filter(product => product[2].toLowerCase().includes(searchTerm));
 
-        function displayRelatedProducts() {
-            const relatedProductsHtml = relatedProducts.slice(displayedProductsCount, displayedProductsCount + productsToShow)
-                .map(product => `
-                    <div class="product-item">
-                        <a href="/p/product.html?productId=${product[0]}">
-                            <img src="${product[1]}" alt="${product[2]}">
-                        </a>
-                        <div class="price">USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
-                        <div class="discount">${product[5]} off</div>
-                        <p> <a href="/p/product.html?productId=${product[0]}">${product[2]}</a></p>
-                    </div>
-                `).join('');
-
-            document.getElementById('related-products-list').innerHTML += relatedProductsHtml;
-
-            displayedProductsCount += productsToShow;
-
-            if (displayedProductsCount >= relatedProducts.length) {
-                document.getElementById('load-more').style.display = 'none';
-            }
-        }
-
-        document.getElementById('search-button').addEventListener('click', function() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            const filteredProducts = relatedProducts.filter(product => product[2].toLowerCase().includes(searchTerm));
+        if (filteredProducts.length > 0) {
             displayedProductsCount = 0; // Reset displayed count
             document.getElementById('related-products-list').innerHTML = ''; // Clear previous results
-            if (filteredProducts.length > 0) {
-                relatedProducts = filteredProducts; // Update relatedProducts to filtered results
-                displayRelatedProducts();
-            } else {
-                document.getElementById('related-products-list').innerHTML = '<p>No results found.</p>';
-            }
-        });
+            relatedProducts = filteredProducts; // Update to filtered results
+            displayRelatedProducts();
+        } else {
+            document.getElementById('related-products-list').innerHTML = '<p>No results found.</p>';
+        }
+    });
 
-        document.getElementById('load-more').addEventListener('click', displayRelatedProducts);
-        fetchProductData();
-    </script>
+    document.getElementById('load-more').addEventListener('click', displayRelatedProducts);
 
+    // Start fetching product data
+    fetchProductData();
+</script>
 
                     </article>
                 </div>
