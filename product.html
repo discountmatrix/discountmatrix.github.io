@@ -7,9 +7,10 @@
 <html>
 <head>
     <!-- Dynamically populate title with JavaScript -->
-    <title> {{title || 'Default Title'}} DiscountMatrix - Discover the Best Deals and Exciting Discounts</title>
-    <meta name="description" content="buy discount {{title}} - Discount on Matrix is a platform that helps you find the best deals and exciting discounts on a wide range of products. Stay updated with the latest prices, promotions, and exclusive offers to save on your purchases.">
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{title}} - Discover amazing discounts on this product. Shop now and save!">
+    <title>{{title}} - amazing discounts</title> 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -45,152 +46,694 @@
 
                     <!-- Content -->
                     <article>
-                        <style>
-                            /* Your CSS goes here */
-                        </style>
+                      <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #E91E63;
+        }
+        .product-section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .product-detail {
+            flex: 1;
+        }
+        .product-detail img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            flex: 2;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .details h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #E91E63;
+            margin: 10px 0;
+        }
+        .discount-price {
+            font-weight: bold;
+            font-size: 16px;
+            color: #777;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        .discount {
+            font-size: 18px;
+            color: #FF5722;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .buy-now {
+            display: inline-block;
+            background-color: #E91E63;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 16px;
+        }
+        .buy-now:hover {
+            background-color: #c2185b;
+        }
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .search-bar input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #E91E63;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .search-bar button {
+            background-color: #E91E63;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .related-products-section {
+            margin-top: 40px;
+        }
+        .related-products h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .related-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-item {
+            flex: 1 1 calc(25% - 20px);
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .product-item p {
+            font-size: 14px;
+            color: #333;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            background-color: #E91E63;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+   <style>
+      
+        .review-container {
+            background-color: #fff;
+          
+            margin-bottom: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .review-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .review-author {
+            color: #777;
+            font-size: 14px;
+        }
+        .review-content {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .review-rating {
+            color: #f39c12;
+            font-size: 16px;
+        }
+      
+    .comment-form {
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            max-width: 100%;
+            width: 100%; /* Adjusted width for better responsiveness */
+            max-width: 100%; /* Max width for larger screens */
+            margin: auto;
+            box-sizing: border-box;
+        }
 
-                        <div class="container" id="content">
-                            <div class="breadcrumb">
-                                <a href="/">Home</a> &gt; <span id="breadcrumb-title">Product Title</span>
-                            </div>
+        .comment-form h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
 
-                            <div class="product-section">
-                                <div id="product-detail" class="product-detail"></div>
-                            </div>
+        .comment-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-                            <div class="search-bar">
-                                <input type="text" id="search-input" placeholder="Search for related products..." autocomplete="off" />
-                                <button id="search-button">Search</button>
-                            </div>
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-                            <div class="related-products-section">
-                                <h2>Related Products</h2>
-                                <div id="related-products-list" class="related-products"></div>
-                                <div class="pagination">
-                                    <button id="load-more">Load More</button>
-                                </div>
-                            </div>
-                        </div>
+        .star-rating {
+            display: flex;
+      
+            margin-bottom: 10px;
+        }
 
-                        <script type="application/ld+json" id="schema-markup">
-                        {
-                            "@context": "https://schema.org/",
-                            "@type": "Product",
-                            "name": "{{title}}",
-                            "image": "{{imageUrl}}",
-                            "description": "Don't Miss Out: {{title}} is available with {{discount}}. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!",
-                            "brand": {
-                                "@type": "Brand",
-                                "name": "Best Diskon"
-                            },
-                            "offers": {
-                                "@type": "Offer",
-                                "priceCurrency": "USD",
-                                "price": "{{discountPrice}}",
-                                "itemCondition": "https://schema.org/NewCondition",
-                                "availability": "https://schema.org/InStock",
-                                "url": "/product.html?productId={{id}}"
-                            }
-                        }
-                        </script>
+        .star {
+            font-size: 1.5em;
+            color: #ddd;
+            cursor: pointer;
+        }
 
-                        <script>
-                            const sheetId = '1dRJ72TYn9eBq-VK4sngnZqTCc-1eWNRBuhK6pMrSnt8';
-                            const apiKey = 'AIzaSyCpmFiIHxwX6XhPbvZYTytfpiv_DcA1b2g';
-                            const range = 'Sheet1';
-                            const urlParams = new URLSearchParams(window.location.search);
-                            const productId = urlParams.get('productId');
+        .star.selected {
+            color: #ffd700;
+        }
 
-                            let relatedProducts = [];
-                            let displayedProductsCount = 0;
-                            const productsToShow = 6;
+        .upload-container {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            border-radius: 4px;
+            background: #fafafa;
+            text-align: center;
+            position: relative;
+        }
 
-                            function fetchProductData() {
-                                fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        const rows = data.values;
-                                        const productData = rows.find(row => row[0] === productId);
+        .upload-container .file-input {
+            cursor: pointer;
+            padding: 10px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
 
-                                        if (productData) {
-                                            displayProduct(productData);
-                                            fetchRelatedProducts(productData[8]);
-                                        } else {
-                                            console.error('Product not found for ID:', productId);
-                                        }
-                                    })
-                                    .catch(error => console.error('Error fetching product data:', error));
-                            }
+        .upload-container .file-input:hover {
+            background: #ccc;
+        }
 
-                            function displayProduct(product) {
-                                const productDetailHtml = `
-                                    <img src="${product[1]}" alt="${product[2]}" style="height: 300px;">
-                                    <div class="details">
-                                        <h1>${product[2]}</h1>
-                                        <p>Don't Miss Out: ${product[2]} is available with ${product[5]} off. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!</p>
-                                        <div class="price">Price: USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
-                                        <div class="discount">${product[5]} off</div>
-                                        <center><a href="${product[6]}" class="buy-now">See Detail</a></center>
-                                    </div>
-                                `;
-                                document.getElementById('product-detail').innerHTML = productDetailHtml;
+        #fileName {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
 
-                                // Update breadcrumb title
-                                document.getElementById('breadcrumb-title').textContent = product[2];
+        .submit-button {
+            background-color: #E91E63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%; /* Full width for better responsiveness */
+        }
 
-                                // Update meta description and title
-                                document.querySelector('meta[name="description"]').setAttribute('content', `${product[2]} - Discover amazing discounts on this product. Shop now and save!`);
-                                document.title = `${product[2]} - Best Diskon Product`;
-                            }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
 
-                            function fetchRelatedProducts(category) {
-                                fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        relatedProducts = data.values.filter(row => row[8] === category && row[0] !== productId);
-                                        displayRelatedProducts();
-                                    })
-                                    .catch(error => console.error('Error fetching related products:', error));
-                            }
+        #notification {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-                            function displayRelatedProducts() {
-                                const relatedProductsHtml = relatedProducts.slice(displayedProductsCount, displayedProductsCount + productsToShow)
-                                    .map(product => `
-                                        <div class="product-item">
-                                            <a href="/product.html?productId=${product[0]}">
-                                                <img src="${product[1]}" alt="${product[2]}">
-                                            </a>
-                                            <div class="price">USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
-                                            <div class="discount">${product[5]} off</div>
-                                            <p> <a href="/product.html?productId=${product[0]}">${product[2]}</a></p>
-                                        </div>
-                                    `).join('');
+        #loading {
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-                                document.getElementById('related-products-list').innerHTML += relatedProductsHtml;
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ddd;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            display: inline-block;
+            animation: spin 1s linear infinite;
+            margin: 0 5px;
+        }
 
-                                displayedProductsCount += productsToShow;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &gt; <a href="/products">Products</a> &gt; <span id="breadcrumb-title">Product Title</span>
+        </div>
 
-                                if (displayedProductsCount >= relatedProducts.length) {
-                                    document.getElementById('load-more').style.display = 'none';
-                                }
-                            }
+        <div class="product-section">
+            <div id="product-detail" class="product-detail">
+                <!-- Product detail content will be rendered here -->
+            </div>
+        </div>
+     
+      
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_email"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_telegram"></a>
+<a class="a2a_button_google_gmail"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+      
+      <br/>     <br/>
+   <h3>Customer Reviews</h3>
 
-                            document.getElementById('search-button').addEventListener('click', function() {
-                                const searchTerm = document.getElementById('search-input').value.toLowerCase();
-                                const filteredProducts = relatedProducts.filter(product => product[2].toLowerCase().includes(searchTerm));
-                                displayedProductsCount = 0; // Reset displayed count
-                                document.getElementById('related-products-list').innerHTML = ''; // Clear previous results
-                                if (filteredProducts.length > 0) {
-                                    relatedProducts = filteredProducts; // Update relatedProducts to filtered results
-                                    displayRelatedProducts();
-                                } else {
-                                    document.getElementById('related-products-list').innerHTML = '<p>No results found.</p>';
-                                }
-                            });
+<div class="review-container">
+    <div class="review-title">Amazing Product!</div>
+    <div class="review-author">By: g***i, June 20, 2023</div>
+    <div class="review-rating">Rating: ★★★★★</div>
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Add9733cb34944617ad8f706de50684fcn.jpg_.webp" class="lazy" alt="Product Image" style="width:100px; height:auto; border-radius:5px;">
+    <div class="review-content">I am extremely satisfied with this product. The quality is great and it matches the description perfectly. Highly recommended!</div>
+</div>
 
-                            document.getElementById('load-more').addEventListener('click', displayRelatedProducts);
-                            fetchProductData();
-                        </script>
+<div class="review-container">
+    <div class="review-title">Fast Shipping!</div>
+    <div class="review-author">By: M**ke, july 15, 2023</div>
+    <div class="review-rating">Rating: ★★★★★</div>
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ae68100b1f65440d995595447c32618a3X.jpg_.webp" class="lazy" alt="Product Image" style="width:100px; height:auto; border-radius:5px;">
+    <div class="review-content">The product arrived quickly and in great condition. Thank you!</div>
+</div>
+
+<div class="review-container">
+    <div class="review-title">Great Value for Money</div>
+    <div class="review-author">By: E****y, december 14, 2023</div>
+    <div class="review-rating">Rating: ★★★★☆</div>
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ae22b71c0186040f1bf7840421faeadf6M.jpg_.webp" class="lazy" alt="Product Image" style="width:100px; height:auto; border-radius:5px;">
+    <div class="review-content">This product is a great deal for the price. Very satisfied with my purchase!</div>
+</div>
+
+<div class="review-container">
+    <div class="review-title">Love It!</div>
+    <div class="review-author">By: A***a, September 10, 2024</div>
+    <div class="review-rating">Rating: ★★★★★</div>
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Af84fa955c9b74a4b856eb3b0bf4fdfdeg.jpg_.webp" class="lazy" alt="Product Image" style="width:100px; height:auto; border-radius:5px;">
+    <div class="review-content">I absolutely love this product! It works perfectly and has exceeded my expectations.</div>
+</div>
+   <div class="comment-form">
+        <h3>Leave a Review</h3>
+        <form id="commentForm" onsubmit="submitComment(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="starRating">Rating:</label>
+            <div class="star-rating" id="starRating">
+                <span class="star" data-rating="1">★</span>
+                <span class="star" data-rating="2">★</span>
+                <span class="star" data-rating="3">★</span>
+                <span class="star" data-rating="4">★</span>
+                <span class="star" data-rating="5">★</span>
+            </div>
+            <input type="hidden" id="starRatingHidden" value="">
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" required></textarea>
+
+            <div class="upload-container" id="uploadContainer">
+                <label class="upload-label" for="imageUpload">Upload Image:</label>
+                <div class="file-input" onclick="triggerFileInput()" id="dragDropArea">
+                    Click or Drag & Drop to upload
+                </div>
+                <input type="file" id="imageUpload" accept="image/*" style="display: none;" onchange="updateFileName()">
+                <span id="fileName">No file chosen</span>
+            </div>
+
+            <div id="notification"></div>
+            <div id="loading"></div>
+
+            <button type="submit" class="submit-button">Submit Comment</button>
+        </form>
+    </div>
+
+    <script>
+        const uploadContainer = document.getElementById('uploadContainer');
+        const dragDropArea = document.getElementById('dragDropArea');
+        const starRating = document.getElementById('starRating');
+        const stars = starRating.querySelectorAll('.star');
+
+        // Drag and drop functionality
+        dragDropArea.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            uploadContainer.classList.add('drag-over');
+        });
+
+        dragDropArea.addEventListener('dragleave', () => {
+            uploadContainer.classList.remove('drag-over');
+        });
+
+        dragDropArea.addEventListener('drop', (event) => {
+            event.preventDefault();
+            uploadContainer.classList.remove('drag-over');
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                document.getElementById('imageUpload').files = files;
+                updateFileName();
+            }
+        });
+
+        function submitComment(event) {
+            event.preventDefault(); // Prevent form from submitting the default way
+
+            // Show loading effect
+            const loadingElement = document.getElementById('loading');
+            loadingElement.innerHTML = `
+                <div class="loading-spinner"></div>
+                <div class="loading-spinner"></div>
+                <div class="loading-spinner"></div>
+            `;
+
+            // Hide notification
+            const notificationElement = document.getElementById('notification');
+            notificationElement.innerHTML = '';
+
+            // Simulate form submission with a delay
+            setTimeout(() => {
+                // Hide loading effect
+                loadingElement.innerHTML = '';
+
+                // Show success notification
+                notificationElement.innerHTML = 'Your comment has been successfully submitted and is now under review.';
+
+                // Clear form fields
+                document.getElementById('commentForm').reset();
+
+                // Clear file input
+                document.getElementById('fileName').textContent = 'No file chosen';
+
+                // Clear star rating
+                stars.forEach(star => star.classList.remove('selected'));
+            }, 2000); // Adjust the delay as needed
+        }
+
+        function setRating(rating) {
+            document.getElementById('starRatingHidden').value = rating;
+            stars.forEach(star => {
+                const starRatingValue = parseInt(star.getAttribute('data-rating'));
+                if (starRatingValue <= rating) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
+        starRating.addEventListener('click', (event) => {
+            const rating = parseInt(event.target.getAttribute('data-rating'));
+            if (!isNaN(rating)) {
+                setRating(rating);
+            }
+        });
+
+        function triggerFileInput() {
+            document.getElementById('imageUpload').click();
+        }
+
+        function updateFileName() {
+            const fileInput = document.getElementById('imageUpload');
+            const fileNameSpan = document.getElementById('fileName');
+            fileNameSpan.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file chosen';
+        }
+    </script>
+      
+         <br/>     <br/> 
+        <br/><br/>
+
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for related products..." autocomplete="off">
+            <button id="search-button">Search</button>
+        </div>
+
+        <div class="related-products-section">
+            <h2>Related Products</h2>
+            <div id="related-products-list" class="related-products">
+                <!-- Related products content will be rendered here -->
+            </div>
+            <div class="pagination">
+                <button id="load-more">Load More</button>
+            </div>
+        </div>
+    </div>
+
+    <script id="product-template" type="x-tmpl-mustache">
+        <div class="product-detail">
+            <img src="{{imageUrl}}" class="lazy" alt="{{title}}" onerror="this.src='default-image.jpg'">
+            <div class="details">
+                <h1>{{title}}</h1>
+                <p>Category: {{category}}</p>
+                <p class="price">Price: <span>{{discountPrice}}</span> <span class="discount-price">({{originPrice}})</span></p>
+                <p class="discount">Discount: {{discount}}</p>
+                <p>Don't Miss Out: {{title}} Shop Now! is available with {{discount}}. Buy more than 2 items and get an extra 10% discount and free shipping. Claim your products now!</p>
+                <a class="buy-now" href="{{promotionUrl}}"><font color='white'><b>Shop Now</b></font></a>
+            </div>
+        </div>
+    </script>
+
+    <script id="related-products-template" type="x-tmpl-mustache">
+        {{#relatedProducts}}
+        <div class="product-item">
+            <a href="/p/product.html?productId={{id}}">
+                <img src="{{imageUrl}}" alt="{{title}}" class="lazy" onerror="this.src='default-image.jpg'">
+            </a>
+            <p>Price: <span>{{discountPrice}}</span></p>
+            <p class="discount">Discount: {{discount}}</p>
+        </div>
+        {{/relatedProducts}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"></script>
+    <script>
+        const sheetId = '1dRJ72TYn9eBq-VK4sngnZqTCc-1eWNRBuhK6pMrSnt8';
+        const apiKey = 'AIzaSyCpmFiIHxwX6XhPbvZYTytfpiv_DcA1b2g';
+        const range = 'Sheet1';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('productId');
+
+        function fetchProductData(productId) {
+            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    const rows = data.values;
+                    const productData = rows.find(row => row[0] === productId);
+
+                    if (productData) {
+                        const product = {
+                            id: productData[0],
+                            imageUrl: productData[1],
+                            title: productData[2],
+                            originPrice: productData[3],
+                            discountPrice: productData[4],
+                            discount: productData[5],
+                            promotionUrl: productData[6],
+                            category: productData[8]
+                        };
+
+                        document.getElementById('breadcrumb-title').textContent = product.title;
+
+                        const template = document.getElementById('product-template').innerHTML;
+                        const rendered = Mustache.render(template, product);
+                        document.getElementById('product-detail').innerHTML = rendered;
+
+                        // Set the document title
+                        document.title = `${product.title} - Best Diskon Product`;
+
+                        fetchRelatedProducts();
+                    } else {
+                        document.getElementById('product-detail').innerHTML = '<p>Product not found.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    document.getElementById('product-detail').innerHTML = '<p>Unable to fetch product details.</p>';
+                });
+        }
+
+        let currentPage = 1;
+        const productsPerPage = 8;
+
+        function fetchRelatedProducts() {
+            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    const rows = data.values;
+                    const latestProducts = rows.slice(-20);
+                    const relatedProducts = latestProducts.filter(row => row[0] !== productId);
+
+                    const start = (currentPage - 1) * productsPerPage;
+                    const end = start + productsPerPage;
+                    const paginatedProducts = relatedProducts.slice(start, end);
+
+                    const template = document.getElementById('related-products-template').innerHTML;
+                    const rendered = Mustache.render(template, { relatedProducts: paginatedProducts.map(row => ({
+                        id: row[0],
+                        imageUrl: row[1],
+                        title: row[2],
+                        discountPrice: row[4],
+                        discount: row[5]
+                    }))});
+                    document.getElementById('related-products-list').innerHTML += rendered;
+
+                    document.getElementById('load-more').style.display = relatedProducts.length > end ? 'block' : 'none';
+                })
+                .catch(error => {
+                    console.error('Error fetching related products:', error);
+                    document.getElementById('related-products-list').innerHTML = '<p>Unable to fetch related products.</p>';
+                });
+        }
+
+        function searchRelatedProducts(query) {
+            if (!query.trim()) {
+                alert('Please enter a search query.');
+                return;
+            }
+            
+            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    const rows = data.values;
+                    const filteredProducts = rows.filter(row => row[2].toLowerCase().includes(query.toLowerCase()) && row[0] !== productId);
+
+                    const start = 0;
+                    const end = productsPerPage;
+                    const paginatedProducts = filteredProducts.slice(start, end);
+
+                    const template = document.getElementById('related-products-template').innerHTML;
+                    const rendered = Mustache.render(template, { relatedProducts: paginatedProducts.map(row => ({
+                        id: row[0],
+                        imageUrl: row[1],
+                        title: row[2],
+                        discountPrice: row[4],
+                        discount: row[5]
+                    }))});
+                    document.getElementById('related-products-list').innerHTML = rendered;
+                })
+                .catch(error => {
+                    console.error('Error fetching related products:', error);
+                    document.getElementById('related-products-list').innerHTML = '<p>Unable to fetch related products.</p>';
+                });
+        }
+
+        document.getElementById('load-more').addEventListener('click', () => {
+            currentPage++;
+            fetchRelatedProducts();
+        });
+
+        document.getElementById('search-button').addEventListener('click', () => {
+            const query = document.getElementById('search-input').value;
+            searchRelatedProducts(query);
+        });
+
+        if (productId) {
+            fetchProductData(productId);
+        } else {
+            console.error('No productId found in URL');
+            document.getElementById('product-detail').innerHTML = '<p>Product ID is missing in the URL.</p>';
+        }
+    </script>
+
+    <!-- Schema Markup for Product -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "{{title}}",
+        "image": "{{imageUrl}}",
+        "description": "Get the best deals on {{title}} with {{discount}} discount. Buy more than 2 items and get an extra 10% discount and free shipping.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Best Diskon"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "{{discountPrice}}",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "url": "{{promotionUrl}}"
+        }
+    }
+    </script>
+
+</body>
                     </article>
                 </div>
             </div>
