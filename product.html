@@ -47,10 +47,7 @@
 
 							<!-- Content -->
 								<article>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&amp;display=swap" rel="stylesheet" />
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&amp;display=swap" rel="stylesheet" />
-   <style>
+ <style>
       
         .review-container {
             background-color: #fff;
@@ -440,7 +437,21 @@
 <!-- AddToAny END -->
         <br/>     <br/>
 
+Get Your Dream <data:page.title/>  Set at a Discounted Price!
 
+Complete your <data:page.title/>  collection at an incredibly affordable price. Our <data:page.title/>  set, is now available at a special 55% discount!
+
+Crafted from high-quality  material, each product in this set is designed to. With its <data:page.title/>  design, the <data:page.title/>  set is not only  but will also be the center of attention on any occasion.
+
+Why should you have this set?
+
+Premium Quality: Experience the luxury of soft and durable material.
+Elegant Design: Showcase your style with a design that is timeless and suitable for various occasions.
+Versatility: This <data:page.title/>  is highly versatile and can be used for  various uses.
+Affordable Price: Get all these benefits at an unbeatable price.
+Don't miss this golden opportunity! Buy more than 2 sets and get an additional 10% discount plus free shipping. Limited stock, grab your desired <data:page.title/>  set now before it's gone!
+   
+  
       
       <br/>     <br/>
    <h3>Customer Reviews</h3>
@@ -608,7 +619,8 @@
 
 
         <div class="search-bar">
-            
+            <input type="text" id="search-input" placeholder="Search for related products..." autocomplete="off" />
+            <button id="search-button">Search</button>
         </div>
 
         <div class="related-products-section">
@@ -618,7 +630,7 @@
                 <button id="load-more">Load More</button>
             </div>
         </div>
-    </div>
+    </data:page.title></data:page.title></data:page.title></data:page.title></data:page.title></data:page.title></data:page.title></div>
 
     <script type="application/ld+json" id="schema-markup">
     {
@@ -637,7 +649,7 @@
             "price": "{{discountPrice}}",
             "itemCondition": "https://schema.org/NewCondition",
             "availability": "https://schema.org/InStock",
-            "url": "/product.html?productId={{id}}"
+            "url": "/p/product.html?productId={{id}}"
         }
     }
     </script>
@@ -686,23 +698,6 @@
                     <div class="price">Price: USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
                     <div class="discount">${product[5]} off</div>
                     <center><a href="${product[6]}" class="buy-now">See Detail</a></center>
-		    Get Your Dream ${product[2]}  Set at a Discounted Price!
-
- <p>Complete your ${product[2]}>  collection at an incredibly affordable price. Our ${product[2]} 
- set, is now available at a special ${product[5]} discount!
-
-Crafted from high-quality  material, each product in this set is designed to.
-With its ${product[2]}  design, the ${product[2]} set is not only  but will also be the center of attention on any occasion.
-
-Why should you have this set?
-
-Premium Quality: Experience the luxury of soft and durable material.
-Elegant Design: Showcase your style with a design that is timeless and suitable for various occasions.
-Versatility: This <data:page.title/>  is highly versatile and can be used for  various uses.
-Affordable Price: Get all these benefits at an unbeatable price.
-Don't miss this golden opportunity! Buy more than 2 sets and get an additional 10% discount plus free shipping. Limited stock, grab your desired <data:page.title/>  set now before it's gone!
-   </p>
-  
                 </div>
             `;
             document.getElementById('product-detail').innerHTML = productDetailHtml;
@@ -729,12 +724,12 @@ Don't miss this golden opportunity! Buy more than 2 sets and get an additional 1
             const relatedProductsHtml = relatedProducts.slice(displayedProductsCount, displayedProductsCount + productsToShow)
                 .map(product => `
                     <div class="product-item">
-                        <a href="/product.html?productId=${product[0]}">
+                        <a href="/p/product.html?productId=${product[0]}">
                             <img src="${product[1]}" alt="${product[2]}">
                         </a>
                         <div class="price">USD ${product[4]} <span class="discount-price">($${product[3]})</span></div>
                         <div class="discount">${product[5]} off</div>
-                        <p> <a href="/product.html?productId=${product[0]}">${product[2]}</a></p>
+                        <p> <a href="/p/product.html?productId=${product[0]}">${product[2]}</a></p>
                     </div>
                 `).join('');
 
