@@ -87,15 +87,20 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-color: #f7f7f7;
-		background-position: top left, top left;
-		background-repeat: repeat-x, repeat;
-		background-size: 100% 30em, auto;
-		/* Mengatur warna link */
+    max-width: 900px; /* Mengatur lebar maksimum body */
+    margin: 0 auto;   /* Memusatkan body */
+    padding: 20px;    /* Menambahkan padding (opsional) */
+    
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png"); /* Ubah 'top' menjadi 'to bottom' */
+    background-color: #f7f7f7;
+    background-position: top left, top left;
+    background-repeat: repeat-x, repeat;
+    background-size: 100% 30em, auto;
+}
+
 a {
     color: #333; /* Warna link normal */
     text-decoration: none; /* Menghapus garis bawah */
@@ -113,16 +118,22 @@ a:hover {
 
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
-		}
+		body.is-preload, body.is-preload * {
+    max-width: 900px; /* Mengatur lebar maksimum */
+    margin: 0 auto;   /* Memusatkan konten */
+}
+
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
 
 	input, select, textarea {
 		font-family: 'Open Sans', sans-serif;
@@ -206,42 +217,35 @@ a:hover {
 /* Container */
 
 	.container {
-		margin: 0 auto;
-		max-width: 100%;
-		width: 900px;
-	}
+    margin: 0 auto;
+    max-width: 900px; /* Mengatur lebar maksimum menjadi 900px */
+    width: 100%; /* Mengatur lebar default ke 100% */
+}
 
-		@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1680px) {
+    .container {
+        width: 900px; /* Ubah lebar untuk layar di bawah 1680px */
+    }
+}
 
-			.container {
-				width: 1200px;
-			}
+@media screen and (max-width: 1280px) {
+    .container {
+        width: 900px; /* Ubah lebar untuk layar di bawah 1280px */
+    }
+}
 
-		}
+@media screen and (max-width: 980px) {
+    .container {
+        width: 90%; /* Mengatur lebar ke 90% untuk layar di bawah 980px */
+    }
+}
 
-		@media screen and (max-width: 1280px) {
+@media screen and (max-width: 736px) {
+    .container {
+        width: 100%; /* Mengatur lebar ke 100% untuk layar di bawah 736px */
+    }
+}
 
-			.container {
-				width: 960px;
-			}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			.container {
-				width: 90%;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.container {
-				width: 100%;
-			}
-
-		}
 
 /* Row */
 
