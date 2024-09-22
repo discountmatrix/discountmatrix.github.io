@@ -95,11 +95,22 @@ input, select, textarea {
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
 		background-size: 100% 30em, auto;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 13pt;
-		color: #696969;
-		font-weight: 300;
-		line-height: 2.25em;
+		/* Mengatur warna link */
+a {
+    color: #333; /* Warna link normal */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+/* Mengatur warna link yang sudah dikunjungi */
+a:visited {
+    color: #333; /* Warna link yang sudah dikunjungi */
+}
+
+/* Mengatur warna saat hover */
+a:hover {
+    color: #333; /* Warna saat hover */
+}
+
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
